@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Integration Platform - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+        
+        .card-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        .status-ready {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .status-pending {
+            background: #fff3e0;
+            color: #e65100;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Enterprise Integration Platform</h1>
+            <p>Unified Tooling, Automation & Observability Ecosystem</p>
+        </header>
+        
+        <div class="cards-grid">
+            <a href="Architecture.html" class="card">
+                <div class="card-icon">🏗️</div>
+                <h2>Architecture</h2>
+                <p>High-level system architecture, integration patterns, and technical design for connecting Jira, Microsoft 365, HubSpot, Zendesk, ERP, and APM platforms.</p>
+                <span class="card-status status-ready">Ready</span>
+            </a>
+            
+            <a href="UseCases.html" class="card">
+                <div class="card-icon">📋</div>
+                <h2>Use Cases</h2>
+                <p>Detailed use cases covering workflow automation, cross-system integrations, and business process optimization.</p>
+                <span class="card-status status-pending">Pending</span>
+            </a>
+            
+            <a href="API.html" class="card">
+                <div class="card-icon">🔌</div>
+                <h2>API Documentation</h2>
+                <p>API specifications, endpoints, authentication, and integration guides for all connected systems.</p>
+                <span class="card-status status-pending">Pending</span>
+            </a>
+            
+            <a href="Observability.html" class="card">
+                <div class="card-icon">📊</div>
+                <h2>Observability</h2>
+                <p>APM integration, monitoring dashboards, alerting strategies, and unified visibility across the enterprise.</p>
+                <span class="card-status status-pending">Pending</span>
+            </a>
+            
+            <a href="Workflows.html" class="card">
+                <div class="card-icon">⚙️</div>
+                <h2>Workflows</h2>
+                <p>Automated workflows spanning engineering, support, sales, finance, and operations teams.</p>
+                <span class="card-status status-pending">Pending</span>
+            </a>
+            
+            <a href="Security.html" class="card">
+                <div class="card-icon">🔒</div>
+                <h2>Security & Compliance</h2>
+                <p>Identity management, SSO, data governance, and compliance standards (SOC2, PCI).</p>
+                <span class="card-status status-pending">Pending</span>
+            </a>
+        </div>
+        
+        <footer>
+            <p>Enterprise Integration Platform POC | 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
