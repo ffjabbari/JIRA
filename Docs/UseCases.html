@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases - Enterprise Integration Platform</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar h1 {
+            color: white;
+            font-size: 1.8em;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .navbar a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .use-case {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .use-case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .use-case-title {
+            color: #667eea;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+        
+        .use-case-id {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .use-case-section {
+            margin: 20px 0;
+        }
+        
+        .use-case-section h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .use-case-section p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .use-case-section ul {
+            margin-left: 25px;
+            color: #555;
+        }
+        
+        .use-case-section li {
+            margin-bottom: 8px;
+        }
+        
+        .actors {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .actor-badge {
+            background: #e8f4fd;
+            color: #2196F3;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .systems {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        
+        .system-badge {
+            background: #f3e8fd;
+            color: #764ba2;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .diagram-container {
+            background: #fafbfc;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .benefits {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .benefits h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .benefits ul {
+            margin-left: 25px;
+            color: #2e7d32;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>📋 Use Cases</h1>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content-card">
+            <h2>Overview</h2>
+            <p>
+                This document outlines key use cases for the Enterprise Integration Platform. Each use case demonstrates 
+                how the platform automates workflows, integrates systems, and provides unified visibility across the organization.
+            </p>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">New Customer Onboarding</div>
+                <div class="use-case-id">UC-001</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">Sales Team</span>
+                    <span class="actor-badge">Engineering Team</span>
+                    <span class="actor-badge">Support Team</span>
+                    <span class="actor-badge">Finance Team</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">HubSpot</span>
+                    <span class="system-badge">Jira</span>
+                    <span class="system-badge">Zendesk</span>
+                    <span class="system-badge">ERP</span>
+                    <span class="system-badge">Intuit Enterprise</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    When a sales deal closes in HubSpot, the platform automatically orchestrates the complete customer 
+                    onboarding process across all systems, creating projects, accounts, and initiating billing without 
+                    manual intervention.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>Sales rep marks deal as "Closed Won" in HubSpot</li>
+                    <li>Workflow Engine detects deal closure via webhook</li>
+                    <li>Jira project is automatically created with implementation tasks</li>
+                    <li>Zendesk customer account is provisioned with support tier</li>
+                    <li>ERP system creates customer record and contract</li>
+                    <li>Intuit Enterprise generates first invoice</li>
+                    <li>Microsoft Teams channel is created for project collaboration</li>
+                    <li>All stakeholders receive automated notifications</li>
+                </ul>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+sequenceDiagram
+    participant Sales as Sales Rep
+    participant HubSpot
+    participant Workflow as Workflow Engine
+    participant Jira
+    participant Zendesk
+    participant ERP
+    participant Intuit
+    
+    Sales->>HubSpot: Mark Deal as Closed Won
+    HubSpot->>Workflow: Webhook: Deal Closed
+    Workflow->>Jira: Create Implementation Project
+    Jira-->>Workflow: Project Created
+    Workflow->>Zendesk: Create Customer Account
+    Zendesk-->>Workflow: Account Created
+    Workflow->>ERP: Create Customer Record
+    ERP-->>Workflow: Record Created
+    Workflow->>Intuit: Generate Invoice
+    Intuit-->>Workflow: Invoice Generated
+    Workflow->>HubSpot: Update Deal Status
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Reduces onboarding time from 2 days to 15 minutes</li>
+                    <li>Eliminates manual data entry errors</li>
+                    <li>Ensures consistent customer experience</li>
+                    <li>Accelerates time to revenue</li>
+                    <li>Provides complete audit trail</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">Incident Detection and Response</div>
+                <div class="use-case-id">UC-002</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">DevOps Team</span>
+                    <span class="actor-badge">Engineering Team</span>
+                    <span class="actor-badge">Support Team</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">New Relic</span>
+                    <span class="system-badge">Prometheus</span>
+                    <span class="system-badge">Jira</span>
+                    <span class="system-badge">Zendesk</span>
+                    <span class="system-badge">Microsoft Teams</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    When APM systems detect performance degradation or errors, the platform automatically correlates 
+                    the incident with business impact, creates tickets, notifies teams, and links related customer 
+                    support issues for faster resolution.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>New Relic detects error rate spike above threshold</li>
+                    <li>Prometheus confirms infrastructure metrics anomaly</li>
+                    <li>Correlation Engine analyzes business impact</li>
+                    <li>Jira incident ticket is automatically created</li>
+                    <li>Related Zendesk tickets are linked to incident</li>
+                    <li>Microsoft Teams incident channel is created</li>
+                    <li>On-call engineer receives alert with full context</li>
+                    <li>Executive Dashboard shows real-time customer impact</li>
+                </ul>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+graph LR
+    A[New Relic Alert] --> C[Correlation Engine]
+    B[Prometheus Alert] --> C
+    C --> D[Analyze Impact]
+    D --> E[Create Jira Incident]
+    D --> F[Link Zendesk Tickets]
+    D --> G[Notify Teams]
+    E --> H[Executive Dashboard]
+    F --> H
+    G --> H
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Reduces mean time to detection (MTTD) by 60%</li>
+                    <li>Provides immediate business impact visibility</li>
+                    <li>Links technical issues to customer complaints</li>
+                    <li>Enables faster root cause analysis</li>
+                    <li>Improves customer communication during incidents</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">Support Ticket to Bug Escalation</div>
+                <div class="use-case-id">UC-003</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">Support Agent</span>
+                    <span class="actor-badge">Engineering Team</span>
+                    <span class="actor-badge">Product Manager</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">Zendesk</span>
+                    <span class="system-badge">Jira</span>
+                    <span class="system-badge">HubSpot</span>
+                    <span class="system-badge">OpenSearch</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    When support identifies a product bug through customer tickets, the platform automatically creates 
+                    a Jira bug with full context, links related tickets, and updates the customer on progress.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>Support agent tags Zendesk ticket as "Bug"</li>
+                    <li>System searches OpenSearch for similar error patterns</li>
+                    <li>Jira bug is created with ticket details and logs</li>
+                    <li>Related Zendesk tickets are automatically linked</li>
+                    <li>Customer account in HubSpot is flagged for follow-up</li>
+                    <li>Engineering team is notified with priority level</li>
+                    <li>Zendesk ticket receives automated updates on bug status</li>
+                    <li>Customer is notified when fix is deployed</li>
+                </ul>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Eliminates duplicate bug reports</li>
+                    <li>Provides engineering with complete context</li>
+                    <li>Keeps customers informed automatically</li>
+                    <li>Tracks customer impact of bugs</li>
+                    <li>Improves customer satisfaction scores</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">Automated Invoice Reconciliation</div>
+                <div class="use-case-id">UC-004</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">Finance Team</span>
+                    <span class="actor-badge">Sales Team</span>
+                    <span class="actor-badge">Operations Team</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">HubSpot</span>
+                    <span class="system-badge">ERP</span>
+                    <span class="system-badge">Intuit Enterprise</span>
+                    <span class="system-badge">Power BI</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    The platform automatically reconciles invoices across HubSpot deals, ERP orders, and Intuit Enterprise 
+                    accounting, flagging discrepancies and providing real-time financial visibility.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>ERP system generates order based on HubSpot deal</li>
+                    <li>Intuit Enterprise creates invoice from ERP data</li>
+                    <li>ETL Pipeline extracts data from all three systems</li>
+                    <li>Reconciliation engine compares amounts and details</li>
+                    <li>Discrepancies are flagged and assigned to finance team</li>
+                    <li>Power BI dashboard shows reconciliation status</li>
+                    <li>Automated alerts for overdue payments</li>
+                    <li>Monthly financial reports generated automatically</li>
+                </ul>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Reduces reconciliation time from days to hours</li>
+                    <li>Eliminates manual spreadsheet work</li>
+                    <li>Catches billing errors immediately</li>
+                    <li>Improves cash flow visibility</li>
+                    <li>Ensures financial compliance and auditability</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">Release Workflow Automation</div>
+                <div class="use-case-id">UC-005</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">Engineering Team</span>
+                    <span class="actor-badge">DevOps Team</span>
+                    <span class="actor-badge">Product Manager</span>
+                    <span class="actor-badge">Support Team</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">Jira</span>
+                    <span class="system-badge">Zendesk</span>
+                    <span class="system-badge">Catchpoint</span>
+                    <span class="system-badge">New Relic</span>
+                    <span class="system-badge">Microsoft Teams</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    The platform orchestrates the complete release workflow from planning through deployment validation, 
+                    ensuring all stakeholders are informed and monitoring is in place.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>Jira release is marked as "Ready for Deployment"</li>
+                    <li>Workflow Engine validates all tickets are closed</li>
+                    <li>Deployment notification sent to all stakeholders</li>
+                    <li>Catchpoint synthetic tests run pre-deployment baseline</li>
+                    <li>Deployment proceeds with automated rollback capability</li>
+                    <li>New Relic monitors error rates and performance</li>
+                    <li>Catchpoint validates critical user journeys post-deploy</li>
+                    <li>Zendesk knowledge base updated with release notes</li>
+                    <li>Support team notified of new features and fixes</li>
+                    <li>Executive Dashboard shows deployment health</li>
+                </ul>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Reduces deployment risk through automated validation</li>
+                    <li>Ensures support team is prepared for customer questions</li>
+                    <li>Provides immediate visibility into deployment health</li>
+                    <li>Enables faster rollback if issues detected</li>
+                    <li>Improves release predictability and quality</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">Executive Performance Dashboard</div>
+                <div class="use-case-id">UC-006</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">Executive Team</span>
+                    <span class="actor-badge">Department Heads</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">Data Warehouse</span>
+                    <span class="system-badge">Power BI</span>
+                    <span class="system-badge">All APM Systems</span>
+                    <span class="system-badge">All Business Systems</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    The platform provides executives with a unified dashboard that correlates technical performance 
+                    with business outcomes, showing the complete picture of organizational health in real-time.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>ETL Pipeline continuously syncs data from all systems</li>
+                    <li>Data Warehouse consolidates and normalizes data</li>
+                    <li>Correlation Engine links technical metrics to business KPIs</li>
+                    <li>Power BI refreshes dashboard every 15 minutes</li>
+                    <li>Dashboard shows: system uptime, customer satisfaction, revenue, support tickets, deployment frequency, error rates, sales pipeline</li>
+                    <li>Drill-down capability to investigate specific metrics</li>
+                    <li>Automated alerts for KPI threshold breaches</li>
+                </ul>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Single source of truth for operational performance</li>
+                    <li>Links technical health to business outcomes</li>
+                    <li>Enables data-driven decision making</li>
+                    <li>Identifies trends and patterns across departments</li>
+                    <li>Reduces time spent gathering reports from 2 days to real-time</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-title">User Lifecycle Management</div>
+                <div class="use-case-id">UC-007</div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Actors</h4>
+                <div class="actors">
+                    <span class="actor-badge">HR Team</span>
+                    <span class="actor-badge">IT Team</span>
+                    <span class="actor-badge">Department Managers</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Systems Involved</h4>
+                <div class="systems">
+                    <span class="system-badge">Identity & SSO</span>
+                    <span class="system-badge">Microsoft 365</span>
+                    <span class="system-badge">Jira</span>
+                    <span class="system-badge">HubSpot</span>
+                    <span class="system-badge">Zendesk</span>
+                </div>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Description</h4>
+                <p>
+                    The platform automates employee onboarding and offboarding, provisioning and de-provisioning access 
+                    across all enterprise systems based on role and department.
+                </p>
+            </div>
+            
+            <div class="use-case-section">
+                <h4>Workflow Steps</h4>
+                <ul>
+                    <li>HR creates new employee record in identity system</li>
+                    <li>Workflow Engine determines required system access by role</li>
+                    <li>Microsoft 365 account created with email and Teams</li>
+                    <li>Jira account provisioned with appropriate project access</li>
+                    <li>HubSpot/Zendesk access granted for sales/support roles</li>
+                    <li>Manager receives notification to complete onboarding tasks</li>
+                    <li>For offboarding: all access revoked simultaneously</li>
+                    <li>Audit log maintained for compliance</li>
+                </ul>
+            </div>
+            
+            <div class="benefits">
+                <h4>Business Benefits</h4>
+                <ul>
+                    <li>Reduces onboarding time from 1 week to 1 hour</li>
+                    <li>Ensures consistent access provisioning</li>
+                    <li>Improves security through immediate offboarding</li>
+                    <li>Maintains compliance with access audit trails</li>
+                    <li>Eliminates orphaned accounts</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#764ba2',
+                secondaryColor: '#764ba2',
+                tertiaryColor: '#f5f7fa'
+            }
+        });
+    </script>
+</body>
+</html>

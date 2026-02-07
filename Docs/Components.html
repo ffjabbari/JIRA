@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Components - Enterprise Integration Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar h1 {
+            color: white;
+            font-size: 1.8em;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .navbar a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .component-card {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .component-card h4 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        
+        .component-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .component-description {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .component-actions {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .component-actions h5 {
+            color: #764ba2;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .component-actions ul {
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        .component-actions li {
+            margin-bottom: 5px;
+        }
+        
+        .layer-section {
+            margin-bottom: 50px;
+        }
+        
+        .layer-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .layer-header h3 {
+            color: white;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1>🧩 System Components</h1>
+            <a href="index.html">← Back to Home</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="content-card">
+            <h2>Component Overview</h2>
+            <p>
+                This document provides detailed descriptions of each component in the Enterprise Integration Platform. 
+                Components are organized by architectural layer and include their purpose, actions, and role in the system.
+            </p>
+        </div>
+        
+        <div class="layer-section">
+            <div class="layer-header">
+                <h3>Business Systems Layer</h3>
+            </div>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h4>Jira</h4>
+                    <span class="component-type">Project Management</span>
+                    <div class="component-description">
+                        Jira serves as the central project management and issue tracking system. It manages engineering workflows, 
+                        sprint planning, bug tracking, and release coordination across development teams.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Tracks issues, bugs, and feature requests</li>
+                            <li>Manages sprint planning and agile workflows</li>
+                            <li>Coordinates release schedules and deployments</li>
+                            <li>Provides visibility into engineering progress</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Receives automated issue creation from monitoring alerts</li>
+                            <li>Syncs project data with HubSpot deals and Zendesk tickets</li>
+                            <li>Triggers deployment workflows via API</li>
+                            <li>Exports metrics to executive dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Microsoft 365</h4>
+                    <span class="component-type">Collaboration Platform</span>
+                    <div class="component-description">
+                        Microsoft 365 provides email, Teams collaboration, SharePoint document management, and calendar services. 
+                        It enables communication and file sharing across the organization.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Manages email communication and calendars</li>
+                            <li>Facilitates team collaboration via Teams</li>
+                            <li>Stores and shares documents in SharePoint</li>
+                            <li>Provides user identity and authentication</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Sends automated notifications for workflow events</li>
+                            <li>Syncs user identities with SSO system</li>
+                            <li>Stores integration documentation in SharePoint</li>
+                            <li>Creates Teams channels for incident response</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>HubSpot</h4>
+                    <span class="component-type">CRM & Sales</span>
+                    <div class="component-description">
+                        HubSpot manages customer relationships, sales pipelines, and marketing automation. It tracks leads, 
+                        deals, and customer interactions throughout the sales lifecycle.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Tracks leads and sales opportunities</li>
+                            <li>Manages customer contact information</li>
+                            <li>Automates marketing campaigns and emails</li>
+                            <li>Reports on sales pipeline and revenue</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Triggers Jira project creation when deals close</li>
+                            <li>Syncs customer data with Zendesk and ERP</li>
+                            <li>Receives product usage data from analytics</li>
+                            <li>Updates deal status based on project milestones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Zendesk</h4>
+                    <span class="component-type">Customer Support</span>
+                    <div class="component-description">
+                        Zendesk handles customer support tickets, help desk operations, and customer service workflows. 
+                        It provides a unified interface for support teams to assist customers.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Manages customer support tickets and inquiries</li>
+                            <li>Tracks ticket status and resolution times</li>
+                            <li>Provides knowledge base and self-service portal</li>
+                            <li>Measures customer satisfaction (CSAT)</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Creates Jira bugs from high-priority tickets</li>
+                            <li>Links tickets to APM incidents for context</li>
+                            <li>Syncs customer data with HubSpot CRM</li>
+                            <li>Triggers alerts when SLA thresholds are breached</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>ERP Systems</h4>
+                    <span class="component-type">Enterprise Resource Planning</span>
+                    <div class="component-description">
+                        ERP systems manage core business processes including inventory, procurement, supply chain, 
+                        and operational workflows. They provide enterprise-wide resource planning and management.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Manages inventory and supply chain</li>
+                            <li>Tracks procurement and vendor relationships</li>
+                            <li>Coordinates operational workflows</li>
+                            <li>Provides business intelligence and reporting</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Receives order data from HubSpot deals</li>
+                            <li>Syncs customer accounts with CRM</li>
+                            <li>Triggers invoicing workflows</li>
+                            <li>Exports financial data to data warehouse</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Intuit Enterprise</h4>
+                    <span class="component-type">Accounting & Finance</span>
+                    <div class="component-description">
+                        Intuit Enterprise handles accounting, invoicing, expense tracking, and financial reconciliation. 
+                        It manages the financial operations and reporting for the organization.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Processes invoices and payments</li>
+                            <li>Tracks expenses and financial transactions</li>
+                            <li>Manages accounts receivable and payable</li>
+                            <li>Generates financial reports and statements</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Receives invoice data from ERP and HubSpot</li>
+                            <li>Automates payment reconciliation</li>
+                            <li>Syncs financial data to Power BI dashboards</li>
+                            <li>Triggers alerts for overdue payments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="layer-section">
+            <div class="layer-header">
+                <h3>Integration & Orchestration Layer</h3>
+            </div>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h4>API Gateway</h4>
+                    <span class="component-type">Integration Hub</span>
+                    <div class="component-description">
+                        The API Gateway serves as the central entry point for all API requests. It handles authentication, 
+                        rate limiting, request routing, and provides a unified interface for all integrations.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Routes API requests to appropriate services</li>
+                            <li>Enforces authentication and authorization</li>
+                            <li>Implements rate limiting and throttling</li>
+                            <li>Logs and monitors all API traffic</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Centralizes all external API calls</li>
+                            <li>Provides consistent error handling</li>
+                            <li>Enables API versioning and deprecation</li>
+                            <li>Collects metrics for performance monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Workflow Engine</h4>
+                    <span class="component-type">Process Orchestration</span>
+                    <div class="component-description">
+                        The Workflow Engine orchestrates complex business processes across multiple systems. It manages 
+                        multi-step workflows, handles retries, and ensures reliable execution of automated processes.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Orchestrates multi-step business processes</li>
+                            <li>Manages workflow state and transitions</li>
+                            <li>Handles errors and implements retry logic</li>
+                            <li>Provides workflow visibility and monitoring</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Automates HubSpot → Jira → Zendesk workflows</li>
+                            <li>Coordinates onboarding and provisioning</li>
+                            <li>Manages approval processes across systems</li>
+                            <li>Triggers notifications at workflow milestones</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>ETL Pipeline</h4>
+                    <span class="component-type">Data Processing</span>
+                    <div class="component-description">
+                        The ETL Pipeline extracts data from source systems, transforms it into a consistent format, 
+                        and loads it into the data warehouse. It ensures data quality and consistency across the platform.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Extracts data from multiple sources</li>
+                            <li>Transforms and normalizes data formats</li>
+                            <li>Validates data quality and integrity</li>
+                            <li>Loads data into the data warehouse</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Syncs data between systems on schedule</li>
+                            <li>Aggregates data for reporting and analytics</li>
+                            <li>Deduplicates and enriches customer records</li>
+                            <li>Maintains historical data for auditing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Event Bus</h4>
+                    <span class="component-type">Event-Driven Architecture</span>
+                    <div class="component-description">
+                        The Event Bus enables real-time, asynchronous communication between systems using publish-subscribe 
+                        patterns. It decouples services and enables scalable, event-driven workflows.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Publishes events to multiple subscribers</li>
+                            <li>Queues messages for reliable delivery</li>
+                            <li>Enables asynchronous processing</li>
+                            <li>Provides event replay and dead-letter queues</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Broadcasts system events to interested services</li>
+                            <li>Triggers webhooks for external integrations</li>
+                            <li>Enables real-time notifications</li>
+                            <li>Decouples services for better scalability</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Identity & SSO</h4>
+                    <span class="component-type">Authentication & Authorization</span>
+                    <div class="component-description">
+                        The Identity and SSO system provides unified authentication and authorization across all enterprise 
+                        tools. It manages user lifecycle, permissions, and ensures secure access to all systems.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Authenticates users via single sign-on</li>
+                            <li>Manages user identities and profiles</li>
+                            <li>Enforces role-based access control</li>
+                            <li>Provisions and de-provisions user accounts</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Centralizes authentication for all systems</li>
+                            <li>Syncs user data across platforms</li>
+                            <li>Automates onboarding and offboarding</li>
+                            <li>Enforces security policies and MFA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="layer-section">
+            <div class="layer-header">
+                <h3>Observability & APM Layer</h3>
+            </div>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h4>OpenSearch</h4>
+                    <span class="component-type">Log Management</span>
+                    <div class="component-description">
+                        OpenSearch aggregates, indexes, and searches logs from all systems. It provides powerful search 
+                        capabilities and enables troubleshooting through centralized log analysis.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Collects logs from all applications and services</li>
+                            <li>Indexes logs for fast searching</li>
+                            <li>Provides full-text search capabilities</li>
+                            <li>Enables log correlation and analysis</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Centralizes logs for troubleshooting</li>
+                            <li>Searches for errors and anomalies</li>
+                            <li>Correlates logs with APM traces</li>
+                            <li>Feeds data to alerting systems</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Prometheus</h4>
+                    <span class="component-type">Metrics Collection</span>
+                    <div class="component-description">
+                        Prometheus collects and stores time-series metrics from applications and infrastructure. It provides 
+                        powerful querying and alerting capabilities for operational monitoring.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Scrapes metrics from instrumented services</li>
+                            <li>Stores time-series data efficiently</li>
+                            <li>Evaluates alerting rules</li>
+                            <li>Provides PromQL query language</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Monitors application and infrastructure health</li>
+                            <li>Tracks custom business metrics</li>
+                            <li>Triggers alerts based on thresholds</li>
+                            <li>Feeds data to Grafana dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Grafana</h4>
+                    <span class="component-type">Visualization Platform</span>
+                    <div class="component-description">
+                        Grafana creates interactive dashboards and visualizations from multiple data sources. It provides 
+                        real-time visibility into system performance and business metrics.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Creates interactive dashboards</li>
+                            <li>Visualizes metrics from multiple sources</li>
+                            <li>Provides alerting and notifications</li>
+                            <li>Enables data exploration and analysis</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Displays operational dashboards for teams</li>
+                            <li>Visualizes integration health metrics</li>
+                            <li>Creates executive KPI dashboards</li>
+                            <li>Monitors SLA compliance in real-time</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>New Relic</h4>
+                    <span class="component-type">Application Performance Monitoring</span>
+                    <div class="component-description">
+                        New Relic provides deep application performance insights including transaction tracing, error tracking, 
+                        and user experience monitoring. It helps identify performance bottlenecks and optimize applications.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Traces application transactions end-to-end</li>
+                            <li>Monitors application performance and errors</li>
+                            <li>Tracks database query performance</li>
+                            <li>Measures user experience and page load times</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Identifies performance bottlenecks</li>
+                            <li>Creates Jira issues from error spikes</li>
+                            <li>Correlates performance with business events</li>
+                            <li>Monitors API response times</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Catchpoint</h4>
+                    <span class="component-type">Synthetic Monitoring</span>
+                    <div class="component-description">
+                        Catchpoint performs synthetic monitoring and tests user journeys from multiple global locations. 
+                        It proactively detects issues before they impact real users.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Runs synthetic tests from global locations</li>
+                            <li>Monitors website and API availability</li>
+                            <li>Measures performance from user perspective</li>
+                            <li>Detects issues before users are affected</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Monitors critical user journeys 24/7</li>
+                            <li>Alerts on availability issues</li>
+                            <li>Validates deployments in production</li>
+                            <li>Tracks SLA compliance metrics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>CloudWatch</h4>
+                    <span class="component-type">AWS Infrastructure Monitoring</span>
+                    <div class="component-description">
+                        CloudWatch monitors AWS infrastructure resources including EC2, Lambda, RDS, and other services. 
+                        It provides metrics, logs, and alarms for AWS-hosted applications.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Collects AWS service metrics</li>
+                            <li>Aggregates application and system logs</li>
+                            <li>Triggers alarms based on thresholds</li>
+                            <li>Monitors Lambda function performance</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Monitors AWS infrastructure health</li>
+                            <li>Tracks Lambda execution metrics</li>
+                            <li>Alerts on resource utilization</li>
+                            <li>Feeds data to unified dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="layer-section">
+            <div class="layer-header">
+                <h3>Data & Analytics Layer</h3>
+            </div>
+            
+            <div class="component-grid">
+                <div class="component-card">
+                    <h4>Data Warehouse</h4>
+                    <span class="component-type">Centralized Data Storage</span>
+                    <div class="component-description">
+                        The Data Warehouse serves as the single source of truth for all enterprise data. It consolidates 
+                        data from all systems and provides a consistent, reliable foundation for analytics and reporting.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Stores consolidated data from all sources</li>
+                            <li>Maintains historical data for analysis</li>
+                            <li>Provides optimized query performance</li>
+                            <li>Ensures data consistency and quality</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Centralizes data from all business systems</li>
+                            <li>Enables cross-system reporting and analytics</li>
+                            <li>Supports data governance and compliance</li>
+                            <li>Feeds Power BI and executive dashboards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Power BI</h4>
+                    <span class="component-type">Business Intelligence</span>
+                    <div class="component-description">
+                        Power BI creates interactive reports and dashboards for business users. It connects to the data 
+                        warehouse and provides self-service analytics capabilities across the organization.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Creates interactive reports and dashboards</li>
+                            <li>Enables self-service data exploration</li>
+                            <li>Provides data visualization and insights</li>
+                            <li>Supports scheduled report distribution</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Builds executive and operational dashboards</li>
+                            <li>Analyzes trends across business systems</li>
+                            <li>Tracks KPIs and performance metrics</li>
+                            <li>Enables data-driven decision making</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <h4>Executive Dashboard</h4>
+                    <span class="component-type">Unified Visibility</span>
+                    <div class="component-description">
+                        The Executive Dashboard provides a single pane of glass for operational performance. It combines 
+                        data from APM, business systems, and analytics to show the complete picture of organizational health.
+                    </div>
+                    <div class="component-actions">
+                        <h5>What it does:</h5>
+                        <ul>
+                            <li>Displays unified operational KPIs</li>
+                            <li>Correlates technical and business metrics</li>
+                            <li>Shows real-time system health</li>
+                            <li>Provides drill-down capabilities</li>
+                        </ul>
+                        <h5>How we use it:</h5>
+                        <ul>
+                            <li>Gives executives real-time visibility</li>
+                            <li>Links application performance to business impact</li>
+                            <li>Tracks integration health and reliability</li>
+                            <li>Monitors customer satisfaction and revenue</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
